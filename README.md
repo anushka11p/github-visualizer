@@ -1,16 +1,59 @@
-# React + Vite
+# DevPulse - GitHub Contribution Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A developer-focused analytics dashboard that visualizes GitHub contribution patterns, commit frequency, and repository activity for any public GitHub user.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+-  Contribution grid heatmap
+-  Commit frequency bar chart (last 30 days)
+-  Top repositories by size
+-  User profile stats (followers, following, public repos)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite
+- Chart.js + react-chartjs-2
+- GitHub REST API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone the repo
+
+git clone https://github.com/anushka11p/github-visualizer.git
+cd github-visualizer
+
+### 2. Install dependencies
+
+npm install
+
+### 3. Set up environment variables
+
+Create a `.env` file in the root:
+
+VITE_GITHUB_TOKEN=your_github_token_here
+
+Get your token at: https://github.com/settings/tokens?type=beta
+
+### 4. Run the app
+
+npm run dev
+
+Open http://localhost:5173 and search any GitHub username!
+
+## Screenshots
+
+<img width="1088" height="780" alt="Screenshot 2026-03-29 at 11 26 51 PM" src="https://github.com/user-attachments/assets/4a82af9e-53e7-4e53-afe0-1ccd97656c0e" />
+
+## Known Limitations
+
+- Repo numbers show size in KB, not actual commit counts
+- Contribution grid is based on commits from the top repo only
+- Only works with public GitHub profiles
+
+## Future Improvements(I'm Aiming for)
+
+- [ ] Real contribution data via GitHub GraphQL API
+- [ ] Actual commit counts per repo
+- [ ] Loading skeletons
+- [ ] Shareable profile links
+- [ ] Language breakdown chart
